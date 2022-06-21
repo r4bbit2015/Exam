@@ -1,6 +1,9 @@
-## Multichain开发者地址
-https://etherscan.io/address/0xfa9da51631268a30ec3ddd1ccbf46c65fad99251  
-在这里可以看到很多合约部署的记录，我对着这个参考  
+## 参考资料
+Multichain开发者地址：https://etherscan.io/address/0xfa9da51631268a30ec3ddd1ccbf46c65fad99251    
+源码：  
+https://github.com/anyswap/anyswap-v1-core/blob/master/contracts/AnyswapV6ERC20.sol
+https://github.com/anyswap/anyswap-v1-core/blob/master/contracts/AnyswapV6Router.sol  
+
 
 ### 环境配置
 我的地址：0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f  
