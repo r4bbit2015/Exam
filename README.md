@@ -108,8 +108,8 @@ def main():
 <img width="910" alt="image" src="https://user-images.githubusercontent.com/68707030/174734800-6f8d1cd5-7b3e-47b4-bc66-38dbe04eb170.png">
 
 ### 我的猜想
-out等于跨链出去 =  烧币
-in = mint等于铸造币
+out等于跨链出去 =  烧币  
+in = mint等于铸造币  
 
 ## 参考资料
 Multichain开发者地址：https://etherscan.io/address/0xfa9da51631268a30ec3ddd1ccbf46c65fad99251    
