@@ -3,7 +3,6 @@ https://etherscan.io/address/0xfa9da51631268a30ec3ddd1ccbf46c65fad99251
 在这里可以看到很多合约部署的记录，我直接对着抄  
 
 ### 1. 部署Anyswapv6Erc20合约
-https://etherscan.io/tx/0xf51701cfa0e16473330019824be2961224cb4e43e4df2f41b09fead93662518a
 
 #### 查看合约构造函数
 ```solodity
@@ -25,4 +24,17 @@ constructor(string memory _name, string memory _symbol, uint8 _decimals, address
         vault = _vault;
     }
 
+```
+
+
+通过查看已部署合约，猜测参数内容  
+https://etherscan.io/address/0xfafa220145dfa5c3ec85b6fa8a75aee2451cde5e 
+
+参数：
+```
+_Name = Binance USD
+_Symbol = anyBUSD
+_DECIMALS = 18
+_UNDERLYING = 0x4fabb145d64652a948d72533023f6e7a623c7c53 
+_VALUT = 0x7782046601e7b9b05ca55a3899780ce6ee6b8b2b 
 ```
