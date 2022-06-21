@@ -1,6 +1,10 @@
 ## Multichain开发者地址
 https://etherscan.io/address/0xfa9da51631268a30ec3ddd1ccbf46c65fad99251  
-在这里可以看到很多合约部署的记录，我直接对着抄  
+在这里可以看到很多合约部署的记录，我对着这个参考  
+
+### 环境配置
+我的地址：0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f
+测试网：Kovan
 
 ### 1. 部署Anyswapv6Erc20合约
 
@@ -41,11 +45,13 @@ _VALUT = 0x7782046601e7b9b05ca55a3899780ce6ee6b8b2b
 _UNDERLYING 为原生Token的合约地址，这里写的BUSD，由Binance官方部署的合约  
 _VALUT 为Multichian开发者部署的合约，通过查看源码发现为AnyswapV6Router合约
 
-那我是不是应该先要部署AnyswapV6Route合约呢？
-或者在测试网上找到AnywapV6Route合约，通过查询Multichain开发者地址在测试网上的交互记录，找到创建合约地址时的参数 
-Multichain开发者地址：0xfa9da51631268a30ec3ddd1ccbf46c65fad99251
-https://kovan.etherscan.io/address/0xfa9da51631268a30ec3ddd1ccbf46c65fad99251
-合约未开源，但是通过Method可以判断为部署的是AnyswapV6ERCErc20合约
-<img width="1369" alt="image" src="https://user-images.githubusercontent.com/68707030/174722594-952e8986-2344-43e0-95ce-cd1efefc507b.png">
-
-2.
+## 开始部署Anyswapv6Erc20合约
+```
+_Name = Wintermute LINK
+_Symbol = winterLINK
+_DECIMALS = 18
+_UNDERLYING = 0xa36085F69e2889c224210F603D836748e7dC0088 
+_VALUT = 0x7782046601e7b9b05ca55a3899780ce6ee6b8b2b 
+```
+_UNDERLYING 为Link的合约地址
+_VALUT 为kovan测试网AnyswapV6Router合约
