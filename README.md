@@ -1,7 +1,7 @@
 
 ### 环境配置
 合约部署者地址：0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f  
-使用geth创建的地址：0xb3A03a7651e288447c326B213776F20f69A4cd4e  
+Keystore地址：0xb3A03a7651e288447c326B213776F20f69A4cd4e  
 测试网：Kovan  
 
 #### 查看合约构造函数
@@ -64,6 +64,11 @@ keystore文件：/Users/r4bbit/Library/Ethereum/keystore/UTC--2022-06-21T06-37-3
 2.通过调用initValut修改Valut地址  
 交易hash:https://kovan.etherscan.io/tx/0x5135cb67cb9783481f148da3f83d6b10134b89dee4bea2b2ee6d06026410b087
 <img width="469" alt="image" src="https://user-images.githubusercontent.com/68707030/174734023-71393b84-73e8-421f-ae33-6e585a1cbe29.png">
+
+### 给keysotre地址Mint一点币
+交易hash:https://kovan.etherscan.io/tx/0xa39ab5153b1db84e33cb33c566637d7ecfa3d5b7139fb822a9d1bd8833c93370  
+<img width="1152" alt="image" src="https://user-images.githubusercontent.com/68707030/174739268-8627d72b-d3bb-4667-ad69-ca0505b94169.png">
+
 
 ### 调用mpc函数查看MPC地址 
 
