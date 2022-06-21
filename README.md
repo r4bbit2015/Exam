@@ -48,5 +48,4 @@ https://kovan.etherscan.io/address/0xfa9da51631268a30ec3ddd1ccbf46c65fad99251
 合约未开源，但是通过Method可以判断为部署的是AnyswapV6ERCErc20合约
 <img width="1369" alt="image" src="https://user-images.githubusercontent.com/68707030/174722594-952e8986-2344-43e0-95ce-cd1efefc507b.png">
 
-
-  
+2.
