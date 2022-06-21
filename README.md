@@ -6,7 +6,8 @@ https://github.com/anyswap/anyswap-v1-core/blob/master/contracts/AnyswapV6Router
 
 
 ### 环境配置
-我的地址：0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f  
+合约部署者地址：0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f
+使用geth创建的地址：0xb3A03a7651e288447c326B213776F20f69A4cd4e
 测试网：Kovan
 
 ### 1. 部署Anyswapv6Erc20合约
@@ -65,4 +66,6 @@ _VALUT 为我自己的地址
 keystore文件：/Users/r4bbit/Library/Ethereum/keystore/UTC--2022-06-21T06-37-33.413266000Z--b3a03a7651e288447c326b213776f20f69a4cd4
 <img width="1060" alt="image" src="https://user-images.githubusercontent.com/68707030/174732966-90ae9674-1dab-4e12-b844-9d920dc2d318.png">
 
-地址:0xb3A03a7651e288447c326B213776F20f69A4cd4e
+此时合约中vault为开发者地址
+<img width="541" alt="image" src="https://user-images.githubusercontent.com/68707030/174733526-d1f8c8e2-c34d-4a9b-93b5-64c2116bf486.png">
+
