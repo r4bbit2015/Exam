@@ -77,6 +77,28 @@ keystore文件：/Users/r4bbit/Library/Ethereum/keystore/UTC--2022-06-21T06-37-3
 
 ### 通过RPC获取swapout交易，并且输出交易内容，交易区块高度，区块时间戳
 我不太懂这个描述，我以为应该是通过python链到Kovan RPC测试网 然后用web3.py获取吧
+```python
+def get_mpc():
+    mpc_abi = json.loads(anyswapv6ABI.json)
+    anywapV6Erc20 = web3.toChecksumAddress("0x4a3f2880a14aC004f886f42C760aA605765e24bC")
+    contract_address = web3.eth.contract(anywapV6Erc20, abi=mpc_abi)
+    mpc_address = contract_address.functions.mpc().call()
+    return mpc_address
+
+def exam():
+    ts_hash = "0x4c6937eba0995bcab1c9c0935625dfa5bd0680925267e9679e0abfae9620d21c"
+    ts_infor = json.loads(web3.toJSON(web3.eth.getTransaction(ts_hash)))
+    ts_block_number = ts_infor["blockNumber"]
+    ts_stamp = json.loads(web3.toJSON(web3.eth.getBlock(ts_block_number)))['timestamp']
+    print(f"区块高度:{ts_block_number}")
+    print(f"交易内容:{ts_infor}")
+    print(f"交易时间戳:{ts_stamp}")
+    print(f"MPC地址:{get_mpc()}")
+    
+def main():
+    exam()
+```
+<img width="1279" alt="image" src="https://user-images.githubusercontent.com/68707030/174751390-d3543419-e546-4497-8620-44185d98fa07.png">
 
 
 ### 调用mpc函数查看MPC地址 
