@@ -53,17 +53,19 @@ _UNDERLYING = 0xa36085F69e2889c224210F603D836748e7dC0088
 _VALUT = 0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f 
 ```
 _UNDERLYING 为Link的合约地址  
-_VALUT 为我自己的地址  
+_VALUT 为合约部署者地址
 
 ### 调用initValut设置为Keystore地址  
 1.使用geth创建以太坊账户    
+
 keystore文件：/Users/r4bbit/Library/Ethereum/keystore/UTC--2022-06-21T06-37-33.413266000Z--b3a03a7651e288447c326b213776f20f69a4cd4
 <img width="1060" alt="image" src="https://user-images.githubusercontent.com/68707030/174732966-90ae9674-1dab-4e12-b844-9d920dc2d318.png">
 
-此时合约中vault为开发者地址  
+此时合约中vault为合约部署者地址
 <img width="541" alt="image" src="https://user-images.githubusercontent.com/68707030/174733526-d1f8c8e2-c34d-4a9b-93b5-64c2116bf486.png">
 
-2.通过调用initValut修改Valut地址  
+2.通过调用initValut修改Valut地址   
+
 交易hash:https://kovan.etherscan.io/tx/0x5135cb67cb9783481f148da3f83d6b10134b89dee4bea2b2ee6d06026410b087
 <img width="469" alt="image" src="https://user-images.githubusercontent.com/68707030/174734023-71393b84-73e8-421f-ae33-6e585a1cbe29.png">
 
