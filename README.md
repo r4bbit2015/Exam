@@ -69,6 +69,9 @@ keystore文件：/Users/r4bbit/Library/Ethereum/keystore/UTC--2022-06-21T06-37-3
 交易hash:https://kovan.etherscan.io/tx/0xa39ab5153b1db84e33cb33c566637d7ecfa3d5b7139fb822a9d1bd8833c93370  
 <img width="1152" alt="image" src="https://user-images.githubusercontent.com/68707030/174739268-8627d72b-d3bb-4667-ad69-ca0505b94169.png">
 
+### LogSwapout 
+交易HASH:https://kovan.etherscan.io/tx/0x4c6937eba0995bcab1c9c0935625dfa5bd0680925267e9679e0abfae9620d21c  
+<img width="1143" alt="image" src="https://user-images.githubusercontent.com/68707030/174741218-150ded4a-9ee0-4360-994c-c583375d13a5.png">
 
 ### 调用mpc函数查看MPC地址 
 
