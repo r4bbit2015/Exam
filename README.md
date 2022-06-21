@@ -73,6 +73,10 @@ keystore文件：/Users/r4bbit/Library/Ethereum/keystore/UTC--2022-06-21T06-37-3
 交易HASH:https://kovan.etherscan.io/tx/0x4c6937eba0995bcab1c9c0935625dfa5bd0680925267e9679e0abfae9620d21c  
 <img width="1143" alt="image" src="https://user-images.githubusercontent.com/68707030/174741218-150ded4a-9ee0-4360-994c-c583375d13a5.png">
 
+### 通过RPC获取swapout交易，并且输出交易内容，交易区块高度，区块时间戳
+我不太懂这个描述，我以为应该是通过python链到Kovan RPC测试网 然后用web3.py获取吧
+
+
 ### 调用mpc函数查看MPC地址 
 
 <img width="910" alt="image" src="https://user-images.githubusercontent.com/68707030/174734800-6f8d1cd5-7b3e-47b4-bc66-38dbe04eb170.png">
