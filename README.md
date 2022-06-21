@@ -3,7 +3,7 @@ https://etherscan.io/address/0xfa9da51631268a30ec3ddd1ccbf46c65fad99251
 在这里可以看到很多合约部署的记录，我对着这个参考  
 
 ### 环境配置
-我的地址：0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f
+我的地址：0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f  
 测试网：Kovan
 
 ### 1. 部署Anyswapv6Erc20合约
@@ -31,10 +31,10 @@ constructor(string memory _name, string memory _symbol, uint8 _decimals, address
 ```
 
 
-通过查看已部署合约，猜测参数内容  
-https://etherscan.io/address/0xfafa220145dfa5c3ec85b6fa8a75aee2451cde5e 
+通过查看已部署合约，猜测参数内容    
+https://etherscan.io/address/0xfafa220145dfa5c3ec85b6fa8a75aee2451cde5e   
 
-参数：
+参数：  
 ```
 _Name = Binance USD
 _Symbol = anyBUSD
@@ -46,6 +46,7 @@ _UNDERLYING 为原生Token的合约地址，这里写的BUSD，由Binance官方�
 _VALUT 为Multichian开发者部署的合约，通过查看源码发现为AnyswapV6Router合约
 
 ## 开始部署Anyswapv6Erc20合约
+交易hash:https://kovan.etherscan.io/tx/0x4002c4cec17ae3145932845df3a24975c682ffbcaac4ed4a9f5b873e7c5f51a2
 ```
 _Name = Wintermute LINK
 _Symbol = winterLINK
