@@ -45,7 +45,7 @@ _UNDERLYING = 0x4fabb145d64652a948d72533023f6e7a623c7c53
 _VALUT = 0x7782046601e7b9b05ca55a3899780ce6ee6b8b2b 
 ```
 _UNDERLYING 为原生Token的合约地址，这里写的BUSD，由Binance官方部署的合约  
-_VALUT 为Multichian开发者部署的合约，通过查看源码发现为AnyswapV6Router合约
+_VALUT 为Multichian开发者部署的合约，通过查看源码发现为AnyswapV6Router合约,发现部署了大量Anyswapv6Erc20合约，其中有的合约_VALUT参数为自身地址
 
 #### 部署Anyswapv6Erc20合约
 部署合约交易Hash:https://kovan.etherscan.io/tx/0x9afe517766e4aee42c1d2913f621b68a4a7da2e987f5ffe5f4ecbc46b56efc10  
