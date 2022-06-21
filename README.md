@@ -42,5 +42,11 @@ _UNDERLYING 为原生Token的合约地址，这里写的BUSD，由Binance官方�
 _VALUT 为Multichian开发者部署的合约，通过查看源码发现为AnyswapV6Router合约
 
 那我是不是应该先要部署AnyswapV6Route合约呢？
+或者在测试网上找到AnywapV6Route合约，通过查询Multichain开发者地址在测试网上的交互记录，找到创建合约地址时的参数 
+Multichain开发者地址：0xfa9da51631268a30ec3ddd1ccbf46c65fad99251
+https://kovan.etherscan.io/address/0xfa9da51631268a30ec3ddd1ccbf46c65fad99251
+合约未开源，但是通过Method可以判断为部署的是AnyswapV6ERCErc20合约
+<img width="1369" alt="image" src="https://user-images.githubusercontent.com/68707030/174722594-952e8986-2344-43e0-95ce-cd1efefc507b.png">
+
 
   
