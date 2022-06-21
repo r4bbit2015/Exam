@@ -49,7 +49,8 @@ _UNDERLYING 为原生Token的合约地址，这里写的BUSD，由Binance官方�
 _VALUT 为Multichian开发者部署的合约，通过查看源码发现为AnyswapV6Router合约
 
 #### 开始部署Anyswapv6Erc20合约
-交易hash:https://kovan.etherscan.io/address/0x4a3f2880a14ac004f886f42c760aa605765e24bc
+部署合约交易Hash:https://kovan.etherscan.io/tx/0x9afe517766e4aee42c1d2913f621b68a4a7da2e987f5ffe5f4ecbc46b56efc10  
+Anyswapv6Erc20合约地址:https://kovan.etherscan.io/address/0x4a3f2880a14ac004f886f42c760aa605765e24bc
 ```
 _Name = Wintermute LINK
 _Symbol = winterLINK
