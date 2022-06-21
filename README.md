@@ -38,3 +38,9 @@ _DECIMALS = 18
 _UNDERLYING = 0x4fabb145d64652a948d72533023f6e7a623c7c53 
 _VALUT = 0x7782046601e7b9b05ca55a3899780ce6ee6b8b2b 
 ```
+_UNDERLYING 为原生Token的合约地址，这里写的BUSD，由Binance官方部署的合约  
+_VALUT 为Multichian开发者部署的合约，通过查看源码发现为AnyswapV6Router合约
+
+那我是不是应该先要部署AnyswapV6Route合约呢？
+
+  
