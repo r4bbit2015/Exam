@@ -27,7 +27,13 @@ def init_valut(valut_address):
     return transaction_hash
 ```
 ### setValut
+Input
+```python
+blockNumber:32311631
+Timestamp:1655880840
+Logs:[{'address': '0x4a3f2880a14aC004f886f42C760aA605765e24bC', 'blockHash': '0x023e24345c829d06d0ca00c309de143078e1141c2b706cae341e104b8bc2fb5b', 'blockNumber': 32311631, 'data': '0x', 'logIndex': 8, 'removed': False, 'topics': ['0x5c364079e7102c27c608f9b237c735a1b7bfa0b67f27c2ad26bad447bf965cac', '0x00000000000000000000000069e8c16c735fd878c2a7b5c4dca15f44fc81f69f', '0x00000000000000000000000069e8c16c735fd878c2a7b5c4dca15f44fc81f69f', '0x0000000000000000000000000000000000000000000000000000000062b2bc88'], 'transactionHash': '0x391b7a3ebed17a086f9d2398af2290697109261dd846074f642020b97c9c530c', 'transactionIndex': 2, 'transactionLogIndex': '0x0', 'type': 'mined'}]
 
+```
 ### 2.调用合约mint币给自己、输出交易内容、交易区高、所在时间戳
 ```python
 def mint(to_address,amount):
