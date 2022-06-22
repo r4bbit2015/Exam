@@ -10,7 +10,7 @@ from multichain_exam_config import *
 # 4.获取swapout交易内容、交易区高、所在时间戳
 
 address = web3.toChecksumAddress("0xb3a03a7651e288447c326b213776f20f69a4cd4e")
-dev_key = "ce10f07c15553524c3dc0e8bf390edcafcd3c3bf0f291bcd66cf1499a78e7b5e"
+dev_key = "***"
 dev_address = web3.toChecksumAddress("0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f")
 def get_private_key(keystore_path,password):
     with open(keystore_path) as keyfile:
