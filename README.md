@@ -1,5 +1,5 @@
 ### 1.调用initValut设置Vault为自己控制的个人测试地址   
-（尝试了8次都无法再次调用initValut函数，后来突然想起来这个应该是 除非重新部署合约，否则initVault应该是只能钓用一次。这里我选择使用setValut修改Valut)
+（尝试了8次都无法再次调用initValut函数，后来突然想起来这个应该是 除非重新部署合约，否则initVault应该是只能钓用一次。这里我选择使用changeVault修改Valut)
 ```python
 def init_valut(valut_address):
     txn = ANYSWAP_ERC20_CONTRACT.functions.initVault(valut_address).buildTransaction(
@@ -26,14 +26,45 @@ def init_valut(valut_address):
     print(f"Logs:{res['logs']}")
     return transaction_hash
 ```
-### setValut
+### changeVault
+```python
+def change_vault(new_vault):
+    txn = ANYSWAP_ERC20_CONTRACT.functions.changeVault(new_vault).buildTransaction(
+        {
+            'chainId': 42,
+            'nonce': web3.eth.getTransactionCount(dev_address),
+            'gas': 3600000,
+            'value': 0,  #
+            'gasPrice': web3.eth.gasPrice,
+        }
+    )
+    try:
+        res = json.loads(web3.toJSON(dev_send_tx(txn)))
+        if len(res['logs']) == 0:
+            print(f"Error:{res}")
+            print(f"https://kovan.etherscan.io/tx/{res['transactionHash']}")
+            exit()
+    except Exception as e:
+        traceback.print_exc()
+        print(e)
+    transaction_hash = res['logs'][0]['transactionHash']
+    print(f"blockNumber:{res['blockNumber']}")
+    print(f"Timestamp:{json.loads(web3.toJSON(web3.eth.getBlock(res['blockNumber'])))['timestamp']}")
+    print(f"Logs:{res['logs']}")
+
+    return transaction_hash
+
+```
+交易HASH:https://kovan.etherscan.io/tx/0x391b7a3ebed17a086f9d2398af2290697109261dd846074f642020b97c9c530c  
+成功修改为0x69e8c16c735fd878c2a7b5c4dca15f44fc81f69f
 Input
 ```python
 blockNumber:32311631
 Timestamp:1655880840
 Logs:[{'address': '0x4a3f2880a14aC004f886f42C760aA605765e24bC', 'blockHash': '0x023e24345c829d06d0ca00c309de143078e1141c2b706cae341e104b8bc2fb5b', 'blockNumber': 32311631, 'data': '0x', 'logIndex': 8, 'removed': False, 'topics': ['0x5c364079e7102c27c608f9b237c735a1b7bfa0b67f27c2ad26bad447bf965cac', '0x00000000000000000000000069e8c16c735fd878c2a7b5c4dca15f44fc81f69f', '0x00000000000000000000000069e8c16c735fd878c2a7b5c4dca15f44fc81f69f', '0x0000000000000000000000000000000000000000000000000000000062b2bc88'], 'transactionHash': '0x391b7a3ebed17a086f9d2398af2290697109261dd846074f642020b97c9c530c', 'transactionIndex': 2, 'transactionLogIndex': '0x0', 'type': 'mined'}]
-
 ```
+<img width="409" alt="image" src="https://user-images.githubusercontent.com/68707030/174963780-99024831-64ae-43be-b2fc-60cac79a1d5a.png">
+
 ### 2.调用合约mint币给自己、输出交易内容、交易区高、所在时间戳
 ```python
 def mint(to_address,amount):
