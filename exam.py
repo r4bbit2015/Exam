@@ -1,13 +1,21 @@
 import json
+import time
 import traceback
-
+import asyncio
 from multichain_exam_config import *
+
+# 1.调用initValut设置Vault为自己控制的个人测试地址
+# 2.调用合约mint币给自己
+# 3.调用合约swapout
+# 4.获取swapout交易内容、交易区高、所在时间戳
+
 address = web3.toChecksumAddress("0xb3a03a7651e288447c326b213776f20f69a4cd4e")
 
 def get_private_key(keystore_path,password):
     with open(keystore_path) as keyfile:
         encrypted_key = keyfile.read()
     return web3.eth.account.decrypt(encrypted_key,password)
+
 
 #signTransaction
 def send_tx(_txn):
@@ -16,8 +24,10 @@ def send_tx(_txn):
     res = web3.eth.sendRawTransaction(signed_txn.rawTransaction).hex()
     txn_receipt = web3.eth.waitForTransactionReceipt(res)
     return txn_receipt
-  
+
+
 def mint(to_address,amount):
+
     """
     Mint Token
 
@@ -61,9 +71,12 @@ def swap_out(bind_address,amount):
     )
     try:
         res = json.loads(web3.toJSON(send_tx(txn)))
+
+
     except Exception as e:
         traceback.print_exc()
         print(e)
+
     transaction_hash = res['logs'][0]['transactionHash']
     print(f"blockNumber:{res['blockNumber']}")
     print(f"Timestamp:{json.loads(web3.toJSON(web3.eth.getBlock(res['blockNumber'])))['timestamp']}")
@@ -75,9 +88,10 @@ def swap_out(bind_address,amount):
 
 def get_mpc():
     mpc_address = ANYSWAP_ERC20_CONTRACT.functions.mpc().call()
+    print(mpc_address)
     return mpc_address
 
-def init_valut(valut_address):
+async def init_valut(valut_address):
     txn = ANYSWAP_ERC20_CONTRACT.functions.initVault(valut_address).buildTransaction(
         {
             'chainId': 42,
@@ -104,14 +118,12 @@ def init_valut(valut_address):
     return transaction_hash
 
 
-def exam():
-    mint(address,10000*10**18)
-    swap_out(address,10*10**18)
-#     init_valut(address)
-    print(f"MPC地址:{get_mpc()}")
-
-
 def main():
-    exam()
+    mint(address, 10000 * 10 ** 18)
+    time.sleep(10)
+    swap_out(address, 10 * 10 ** 18)
+    time.sleep(10)
+    get_mpc()
+
 if __name__ == '__main__':
     main()
