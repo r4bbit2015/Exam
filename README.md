@@ -1,4 +1,5 @@
-### 1.调用initValut设置Vault为自己控制的个人测试地址
+### 1.调用initValut设置Vault为自己控制的个人测试地址   
+（尝试了8次都无法再次调用initValut函数，后来突然想起来这个应该是 除非重新部署合约，否则initVault应该是只能钓用一次。这里我选择使用setValut修改Valut)
 ```python
 def init_valut(valut_address):
     txn = ANYSWAP_ERC20_CONTRACT.functions.initVault(valut_address).buildTransaction(
@@ -25,6 +26,8 @@ def init_valut(valut_address):
     print(f"Logs:{res['logs']}")
     return transaction_hash
 ```
+### setValut
+
 ### 2.调用合约mint币给自己、输出交易内容、交易区高、所在时间戳
 ```python
 def mint(to_address,amount):
