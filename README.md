@@ -1,6 +1,7 @@
 ### 1.调用initValut设置Vault为自己控制的个人测试地址
 ### 2.调用合约mint币给自己
 Code:
+
 ```python
 def mint(to_address,amount):
     txn = ANYSWAP_ERC20_CONTRACT.functions.mint(to_address,amount).buildTransaction(
@@ -25,6 +26,7 @@ def mint(to_address,amount):
     return transaction_hash
 ```
 交易Hash:https://kovan.etherscan.io/tx/0x6dde9b18f694d4f0ceaac554fd19f318004fe109145047078947876d29ba40fd  
+
 Input:
 ```python
 Mint Function
@@ -36,6 +38,7 @@ Logs:[{'address': '0x4a3f2880a14aC004f886f42C760aA605765e24bC', 'blockHash': '0x
 ```
 ### 3.调用合约swapout、获取swapout交易内容、交易区高、所在时间戳
 Code:
+
 ```python
 def swap_out(bind_address,amount):
     txn = ANYSWAP_ERC20_CONTRACT.functions.Swapout(amount,address).buildTransaction(
@@ -60,6 +63,7 @@ def swap_out(bind_address,amount):
     return transaction_hash
 ```
 交易HASH:https://kovan.etherscan.io/tx/0xacb55853d65c0036ccdcb3d719312d0d8aea888427f8d7098116e35fbcee84bb  
+
 Input:  
 ```python
 Swap_out
@@ -71,6 +75,7 @@ Logs:[{'address': '0x4a3f2880a14aC004f886f42C760aA605765e24bC', 'blockHash': '0x
 ```
 ### 4.调用MPC
 Code:
+
 ```
 def get_mpc():
     mpc_address = ANYSWAP_ERC20_CONTRACT.functions.mpc().call()
@@ -78,6 +83,7 @@ def get_mpc():
     return mpc_address
 ```
 Input:
+
 ```python
 0xb3A03a7651e288447c326B213776F20f69A4cd4e
 ```
