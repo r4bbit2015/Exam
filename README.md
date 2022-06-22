@@ -1,7 +1,7 @@
 ### 1.调用initValut设置Vault为自己控制的个人测试地址
 ### 2.调用合约mint币给自己
 Code:
-```
+```python
 def mint(to_address,amount):
     txn = ANYSWAP_ERC20_CONTRACT.functions.mint(to_address,amount).buildTransaction(
         {
@@ -24,7 +24,8 @@ def mint(to_address,amount):
     print(f"Logs:{res['logs']}")
     return transaction_hash
 ```
-https://kovan.etherscan.io/tx/0x6dde9b18f694d4f0ceaac554fd19f318004fe109145047078947876d29ba40fd
+交易Hash:https://kovan.etherscan.io/tx/0x6dde9b18f694d4f0ceaac554fd19f318004fe109145047078947876d29ba40fd
+Input:
 ```python
 Mint Function
 Address:0xb3A03a7651e288447c326B213776F20f69A4cd4e Amount:10000.0
@@ -58,7 +59,8 @@ def swap_out(bind_address,amount):
     print(f"Logs:{res['logs']}")
     return transaction_hash
 ```
-https://kovan.etherscan.io/tx/0xacb55853d65c0036ccdcb3d719312d0d8aea888427f8d7098116e35fbcee84bb
+交易HASH:https://kovan.etherscan.io/tx/0xacb55853d65c0036ccdcb3d719312d0d8aea888427f8d7098116e35fbcee84bb
+Input:  
 ```python
 Swap_out
 Address:0xb3A03a7651e288447c326B213776F20f69A4cd4e Amount:10.0
