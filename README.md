@@ -103,7 +103,7 @@ Logs:[{'address': '0x4a3f2880a14aC004f886f42C760aA605765e24bC', 'blockHash': '0x
 ### 4.调用MPC
 Code:
 
-```
+```python
 def get_mpc():
     mpc_address = ANYSWAP_ERC20_CONTRACT.functions.mpc().call()
     print(mpc_address)
