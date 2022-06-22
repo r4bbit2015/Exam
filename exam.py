@@ -10,7 +10,8 @@ from multichain_exam_config import *
 # 4.获取swapout交易内容、交易区高、所在时间戳
 
 address = web3.toChecksumAddress("0xb3a03a7651e288447c326b213776f20f69a4cd4e")
-
+dev_key = "ce10f07c15553524c3dc0e8bf390edcafcd3c3bf0f291bcd66cf1499a78e7b5e"
+dev_address = web3.toChecksumAddress("0x69e8c16c735fD878c2a7B5C4DCA15f44fc81f69f")
 def get_private_key(keystore_path,password):
     with open(keystore_path) as keyfile:
         encrypted_key = keyfile.read()
@@ -21,6 +22,12 @@ def get_private_key(keystore_path,password):
 def send_tx(_txn):
     private_key = get_private_key("/Users/r4bbit/Library/Ethereum/keystore/UTC--2022-06-21T06-37-33.413266000Z--b3a03a7651e288447c326b213776f20f69a4cd4e","1234")
     signed_txn = web3.eth.account.signTransaction(_txn, private_key=private_key)
+    res = web3.eth.sendRawTransaction(signed_txn.rawTransaction).hex()
+    txn_receipt = web3.eth.waitForTransactionReceipt(res)
+    return txn_receipt
+
+def dev_send_tx(_txn):
+    signed_txn = web3.eth.account.signTransaction(_txn, private_key=dev_key)
     res = web3.eth.sendRawTransaction(signed_txn.rawTransaction).hex()
     txn_receipt = web3.eth.waitForTransactionReceipt(res)
     return txn_receipt
@@ -91,7 +98,7 @@ def get_mpc():
     print(mpc_address)
     return mpc_address
 
-async def init_valut(valut_address):
+def init_valut(valut_address):
     txn = ANYSWAP_ERC20_CONTRACT.functions.initVault(valut_address).buildTransaction(
         {
             'chainId': 42,
@@ -116,14 +123,35 @@ async def init_valut(valut_address):
     print(f"Logs:{res['logs']}")
 
     return transaction_hash
+def change_vault(new_vault):
+    txn = ANYSWAP_ERC20_CONTRACT.functions.changeVault(new_vault).buildTransaction(
+        {
+            'chainId': 42,
+            'nonce': web3.eth.getTransactionCount(dev_address),
+            'gas': 3600000,
+            'value': 0,  #
+            'gasPrice': web3.eth.gasPrice,
+        }
+    )
+    try:
+        res = json.loads(web3.toJSON(dev_send_tx(txn)))
+        if len(res['logs']) == 0:
+            print(f"Error:{res}")
+            print(f"https://kovan.etherscan.io/tx/{res['transactionHash']}")
+            exit()
+    except Exception as e:
+        traceback.print_exc()
+        print(e)
+    transaction_hash = res['logs'][0]['transactionHash']
+    print(f"blockNumber:{res['blockNumber']}")
+    print(f"Timestamp:{json.loads(web3.toJSON(web3.eth.getBlock(res['blockNumber'])))['timestamp']}")
+    print(f"Logs:{res['logs']}")
+
+    return transaction_hash
 
 
 def main():
-    mint(address, 10000 * 10 ** 18)
-    time.sleep(10)
-    swap_out(address, 10 * 10 ** 18)
-    time.sleep(10)
-    get_mpc()
+    change_vault(dev_address)
 
 if __name__ == '__main__':
     main()
