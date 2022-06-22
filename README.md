@@ -1,4 +1,31 @@
 ### 1.调用initValut设置Vault为自己控制的个人测试地址
+Code:
+```python
+def init_valut(valut_address):
+    txn = ANYSWAP_ERC20_CONTRACT.functions.initVault(valut_address).buildTransaction(
+        {
+            'chainId': 42,
+            'nonce': web3.eth.getTransactionCount(address),
+            'gas': 3600000,
+            'value': 0,  #
+            'gasPrice': web3.eth.gasPrice,
+        }
+    )
+    try:
+        res = json.loads(web3.toJSON(send_tx(txn)))
+        if len(res['logs']) == 0:
+            print(f"Error:{res}")
+            print(f"https://kovan.etherscan.io/tx/{res['transactionHash']}")
+            exit()
+    except Exception as e:
+        traceback.print_exc()
+        print(e)
+    transaction_hash = res['logs'][0]['transactionHash']
+    print(f"blockNumber:{res['blockNumber']}")
+    print(f"Timestamp:{json.loads(web3.toJSON(web3.eth.getBlock(res['blockNumber'])))['timestamp']}")
+    print(f"Logs:{res['logs']}")
+    return transaction_hash
+```
 ### 2.调用合约mint币给自己、输出交易内容、交易区高、所在时间戳
 Code:
 
